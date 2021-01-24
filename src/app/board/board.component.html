@@ -1,0 +1,15 @@
+<nb-layout>
+    <nb-layout-column class="colored-column-warning">
+        <h1>Current Player: {{ player }} </h1>
+        <button nbButton outline status="danger" (click)="newGame()">Start new Game</button>
+        <h2 *ngIf="winner">
+            Player {{ winner }} won the game!
+        </h2>
+    </nb-layout-column>
+    <nb-layout-column class="colored-column-danger">
+        <main>
+            <app-square *ngFor="let val of squares; let i = index" [value]="val" (click)="makeMove(i)">
+            </app-square>
+        </main>
+    </nb-layout-column>
+</nb-layout>
